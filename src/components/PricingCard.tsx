@@ -17,11 +17,20 @@ const PricingCard = ({ price, period, features }: PricingCardProps) => {
     >
       <div className="text-center mb-8">
         <div className="bg-blue-50 text-blue-900 py-2 px-4 rounded-full inline-block mb-6">
-          50% off today
+          Limited Time Offer
         </div>
-        <h3 className="text-2xl font-semibold mb-2">
-          Save US${price}/yr for {period}
-        </h3>
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-2xl font-semibold mb-2">First Year</h3>
+            <div className="text-4xl font-bold text-primary">US${price}</div>
+            <p className="text-gray-600 mt-1">per {period}</p>
+          </div>
+          <div className="pt-4 border-t border-gray-100">
+            <h4 className="text-xl font-semibold mb-1">After First Year</h4>
+            <div className="text-3xl font-bold text-gray-700">US$119.99</div>
+            <p className="text-gray-600 mt-1">per year</p>
+          </div>
+        </div>
       </div>
       
       <div className="space-y-4">
