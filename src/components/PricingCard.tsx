@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { Check, Tag } from "lucide-react";
+import { Check, DollarSign, Calendar, Tag } from "lucide-react";
 
 interface PricingCardProps {
+  isPromotional?: boolean;
+  firstYearPrice: string;
+  subsequentPrice: string;
   features: string[];
 }
 
-const PricingCard = ({ features }: PricingCardProps) => {
+const PricingCard = ({ isPromotional, firstYearPrice, subsequentPrice, features }: PricingCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -15,16 +18,25 @@ const PricingCard = ({ features }: PricingCardProps) => {
     >
       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
         <div className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-          50% OFF ALL YEAR
+          50% OFF FIRST YEAR
         </div>
       </div>
 
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Plus</h2>
-        <div className="space-y-2">
-          <div className="text-gray-500 line-through">US$119.99</div>
-          <div className="text-4xl font-bold text-gray-900">US$89.99</div>
-          <div className="text-gray-600">per year</div>
+        <div className="space-y-6">
+          {/* First Year Price */}
+          <div>
+            <div className="text-gray-500 line-through">US${subsequentPrice}</div>
+            <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
+            <div className="text-gray-600">First year</div>
+          </div>
+          
+          {/* After First Year Price */}
+          <div className="pt-4 border-t border-gray-100">
+            <div className="text-2xl font-semibold text-gray-700">US${subsequentPrice}</div>
+            <div className="text-gray-600">After first year</div>
+          </div>
         </div>
       </div>
       

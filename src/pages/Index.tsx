@@ -22,16 +22,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#014d40] mb-8">
-            QuickBooks Desktop Premier Plus 2024
-          </h1>
-          
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#014d40] mb-6">
+              QuickBooks Desktop Premier Plus 2024
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              The most powerful QuickBooks Desktop solution for your growing business
+            </p>
+          </div>
+
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="flex items-center gap-2">
               <Star className="text-yellow-400 w-5 h-5 fill-current" />
@@ -65,25 +71,71 @@ const Index = () => {
           </div>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          <PricingCard features={features} />
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16"
+        >
+          <div className="text-center p-6 bg-white rounded-xl shadow-md">
+            <h3 className="text-3xl font-bold text-primary mb-2">7M+</h3>
+            <p className="text-gray-600">Active users worldwide</p>
+          </div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-md">
+            <h3 className="text-3xl font-bold text-primary mb-2">98%</h3>
+            <p className="text-gray-600">Customer satisfaction</p>
+          </div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-md">
+            <h3 className="text-3xl font-bold text-primary mb-2">24/7</h3>
+            <p className="text-gray-600">Expert support</p>
+          </div>
+        </motion.div>
+
+        {/* Pricing Section */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Special Offer - 50% Off
+            </h2>
+            <p className="text-xl text-gray-600">
+              Get our most powerful accounting solution at an unbeatable price
+            </p>
+          </motion.div>
+          <PricingCard 
+            firstYearPrice="89.99"
+            subsequentPrice="119.99"
+            features={features}
+            isPromotional={true}
+          />
         </div>
 
+        {/* Final CTA */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0.4 }}
+          className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Ready to get started?
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 mb-8">
             Join thousands of businesses that trust QuickBooks Desktop Premier Plus
           </p>
-          <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center gap-2">
-            Start your free trial <ArrowRight className="w-5 h-5" />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
+              Start your free trial <ArrowRight className="w-5 h-5" />
+            </button>
+            <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
+              Contact sales
+            </button>
+          </div>
         </motion.div>
       </div>
     </div>
