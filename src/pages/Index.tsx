@@ -29,7 +29,7 @@ const Index = () => {
           className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-[#014d40] mb-8">
-            Find a plan that's right for you
+            QuickBooks Desktop Premier Plus 2024
           </h1>
           
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -68,6 +68,23 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <PricingCard features={features} />
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Ready to get started?
+          </h2>
+          <p className="text-gray-600 mb-8">
+            Join thousands of businesses that trust QuickBooks Desktop Premier Plus
+          </p>
+          <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center gap-2">
+            Start your free trial <ArrowRight className="w-5 h-5" />
+          </button>
+        </motion.div>
       </div>
     </div>
   );
