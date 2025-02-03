@@ -44,9 +44,6 @@ const PricingCard = ({ isPromotional, firstYearPrice, subsequentPrice, features 
         <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-lg text-lg font-semibold transition-colors">
           Buy now
         </button>
-        <button className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-lg text-lg font-semibold transition-colors">
-          Start free trial
-        </button>
       </div>
 
       <div className="space-y-4">
