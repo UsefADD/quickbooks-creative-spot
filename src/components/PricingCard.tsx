@@ -2,50 +2,45 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 interface PricingCardProps {
-  isPromotional?: boolean;
   price: string;
   period: string;
   features: string[];
 }
 
-const PricingCard = ({ isPromotional, price, period, features }: PricingCardProps) => {
+const PricingCard = ({ price, period, features }: PricingCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`relative p-6 rounded-2xl shadow-lg backdrop-blur-sm ${
-        isPromotional
-          ? "bg-white/90 border-2 border-primary"
-          : "bg-white/80 border border-gray-200"
-      }`}
+      className="w-full max-w-xl mx-auto bg-white rounded-xl shadow-sm p-8"
     >
-      {isPromotional && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-            Best Value
-          </span>
+      <div className="text-center mb-8">
+        <div className="bg-blue-50 text-blue-900 py-2 px-4 rounded-full inline-block mb-6">
+          50% off today
         </div>
-      )}
-      <div className="text-center mb-6">
-        <div className="text-3xl font-bold mb-2">${price}</div>
-        <div className="text-gray-600">{period}</div>
+        <h3 className="text-2xl font-semibold mb-2">
+          Save US${price}/yr for {period}
+        </h3>
       </div>
-      <ul className="space-y-4">
+      
+      <div className="space-y-4">
+        <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-lg text-lg font-semibold transition-colors">
+          Buy now
+        </button>
+        <button className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-lg text-lg font-semibold transition-colors">
+          Start free trial
+        </button>
+      </div>
+
+      <div className="mt-8 space-y-4">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center space-x-3">
-            <Check className="h-5 w-5 text-primary" />
-            <span className="text-gray-700">{feature}</span>
-          </li>
+          <div key={index} className="flex items-start space-x-3">
+            <Check className="h-5 w-5 text-slate-600 mt-0.5" />
+            <span className="text-slate-700 text-lg">{feature}</span>
+          </div>
         ))}
-      </ul>
-      <button className={`w-full mt-6 py-3 rounded-lg transition-all duration-200 ${
-        isPromotional
-          ? "bg-primary text-white hover:bg-primary/90"
-          : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-      }`}>
-        Get Started
-      </button>
+      </div>
     </motion.div>
   );
 };
