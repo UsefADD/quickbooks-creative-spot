@@ -88,7 +88,7 @@ const PricingCard = ({
               </div>
               <div className="pt-4 border-t border-gray-100">
                 <div className="text-2xl font-semibold text-gray-700">US${firstYearPrice}</div>
-                <div className="text-gray-600">Renewal price (Save $140 every year)</div>
+                <div className="text-gray-600">Lock in this price forever - Save $140 every year!</div>
               </div>
             </>
           )}
@@ -97,10 +97,13 @@ const PricingCard = ({
 
       <div className="bg-red-50 rounded-lg p-4 mb-6">
         <div className="text-center text-red-600 font-semibold">
-          Offer Ends In:
+          ⚡ Special Offer Ends In:
         </div>
         <div className="text-center text-2xl font-bold text-red-700">
           {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
+        </div>
+        <div className="text-center text-sm text-red-600 mt-2">
+          Lock in $89/year pricing forever when you join before the timer ends!
         </div>
       </div>
       
@@ -111,7 +114,7 @@ const PricingCard = ({
           </button>
         ) : (
           <button className="w-full bg-emerald-600 hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
-            🔥 Claim Your Discount Now
+            🔥 Lock In Your $89/Year Price Now
           </button>
         )}
       </div>
@@ -133,7 +136,7 @@ const PricingCard = ({
             <Timer className="w-5 h-5" />
           )}
           <span className="font-medium">
-            {isLifetime ? "One-time payment, lifetime access!" : "Lock in $89/year forever - Save $140 every year!"}
+            {isLifetime ? "One-time payment, lifetime access!" : "Act now - Lock in $89/year forever before time runs out!"}
           </span>
         </div>
         <div className="text-center text-sm text-gray-600">
