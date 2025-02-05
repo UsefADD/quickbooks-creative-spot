@@ -11,17 +11,17 @@ const HeroSection = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-center gap-4 mb-4">
           <span className="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium">
-            Special Offer
+            Limited Time Offer
           </span>
           <span className="bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-sm font-medium">
-            New: Lifetime Plan Available
+            New: Lifetime Plan - Save $700
           </span>
         </div>
         <h1 className="text-4xl md:text-6xl font-bold text-[#014d40] mb-6 leading-tight">
           QuickBooks Advanced at Unbeatable Prices
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Choose between our exclusive first-year offer at $69 or get lifetime access for a one-time payment of $299!
+          Choose between our exclusive first-year offer at $69 or get lifetime access for a one-time payment of $299 (Regular price: $999)!
         </p>
       </div>
 

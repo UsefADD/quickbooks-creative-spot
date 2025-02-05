@@ -1,15 +1,47 @@
 import { motion } from "framer-motion";
 import { Check, DollarSign, Calendar, Tag, Timer, Infinity } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface PricingCardProps {
   isPromotional?: boolean;
   isLifetime?: boolean;
   firstYearPrice: string;
   subsequentPrice?: string;
+  originalPrice?: string;
   features: string[];
 }
 
-const PricingCard = ({ isPromotional, isLifetime, firstYearPrice, subsequentPrice, features }: PricingCardProps) => {
+const PricingCard = ({ 
+  isPromotional, 
+  isLifetime, 
+  firstYearPrice, 
+  subsequentPrice, 
+  originalPrice,
+  features 
+}: PricingCardProps) => {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 47,
+    minutes: 59,
+    seconds: 59
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 };
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        } else if (prev.hours > 0) {
+          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        }
+        return prev;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -28,7 +60,7 @@ const PricingCard = ({ isPromotional, isLifetime, firstYearPrice, subsequentPric
       {isLifetime && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
           <div className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium flex items-center gap-2">
-            <Infinity className="w-4 h-4" /> LIFETIME ACCESS
+            <Infinity className="w-4 h-4" /> SAVE $700 TODAY
           </div>
         </div>
       )}
@@ -40,6 +72,7 @@ const PricingCard = ({ isPromotional, isLifetime, firstYearPrice, subsequentPric
         <div className="space-y-6">
           {isLifetime ? (
             <div>
+              <div className="text-gray-500 line-through text-xl">US${originalPrice}</div>
               <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
               <div className="text-gray-600">One-time payment</div>
             </div>
@@ -58,11 +91,22 @@ const PricingCard = ({ isPromotional, isLifetime, firstYearPrice, subsequentPric
           )}
         </div>
       </div>
+
+      <div className="bg-red-50 rounded-lg p-4 mb-6">
+        <div className="text-center text-red-600 font-semibold">
+          Offer Ends In:
+        </div>
+        <div className="text-center text-2xl font-bold text-red-700">
+          {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
+        </div>
+      </div>
       
       <div className="space-y-4 mb-8">
-        <button className={`w-full ${isLifetime ? 'bg-primary' : 'bg-emerald-600'} hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2`}>
-          🔥 {isLifetime ? "Get Lifetime Access Now" : "Claim Your Discount Now"}
-        </button>
+        {!isLifetime && (
+          <button className="w-full bg-emerald-600 hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
+            🔥 Claim Your Discount Now
+          </button>
+        )}
       </div>
 
       <div className="space-y-4">
@@ -73,6 +117,14 @@ const PricingCard = ({ isPromotional, isLifetime, firstYearPrice, subsequentPric
           </div>
         ))}
       </div>
+
+      {isLifetime && (
+        <div className="mt-8">
+          <button className="w-full bg-primary hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
+            🔥 Get Lifetime Access Now
+          </button>
+        </div>
+      )}
 
       <div className="mt-8 pt-6 border-t border-gray-100 space-y-4">
         <div className={`flex items-center gap-2 justify-center ${isLifetime ? 'text-primary' : 'text-emerald-600'}`}>

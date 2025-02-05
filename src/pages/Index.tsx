@@ -35,8 +35,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-16">
         <HeroSection />
-        <TrustBadges />
-
+        
         {/* Pricing Section */}
         <div className="max-w-6xl mx-auto mb-16">
           <motion.div
@@ -63,6 +62,7 @@ const Index = () => {
             <PricingCard 
               isLifetime={true}
               firstYearPrice="299"
+              originalPrice="999"
               features={lifetimeFeatures}
             />
           </div>
