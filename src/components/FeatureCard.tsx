@@ -14,13 +14,13 @@ const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="p-8 rounded-2xl bg-white backdrop-blur-sm border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group"
+      className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
     >
-      <div className="rounded-full bg-primary/10 w-14 h-14 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-        <Icon className="h-7 w-7 text-primary" />
+      <div className="rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
+        <Icon className="h-6 w-6 text-primary" />
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </motion.div>
   );
 };
