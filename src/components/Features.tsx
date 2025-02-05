@@ -54,6 +54,22 @@ const Features = () => {
           </p>
         </motion.div>
 
+        {/* Interface Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto mb-16 relative"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+            alt="QuickBooks Dashboard"
+            className="rounded-xl shadow-xl border border-gray-200"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/50 to-transparent rounded-xl" />
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <FeatureCard
@@ -64,6 +80,22 @@ const Features = () => {
             />
           ))}
         </div>
+
+        {/* Additional Interface Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto mt-16 relative"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1483058712412-4245e9b90334"
+            alt="QuickBooks Reports"
+            className="rounded-xl shadow-xl border border-gray-200"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-white/50 to-transparent rounded-xl" />
+        </motion.div>
       </div>
     </div>
   );
