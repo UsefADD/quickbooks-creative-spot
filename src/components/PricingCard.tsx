@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Check, DollarSign, Calendar, Tag, Timer, Infinity } from "lucide-react";
+import { Check, Infinity, Timer } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface PricingCardProps {
   isPromotional?: boolean;
@@ -105,25 +106,14 @@ const PricingCard = ({
       </div>
       
       <div className="space-y-4 mb-8">
-        {isLifetime ? (
-          <a 
-            href="https://whop.com/checkout/plan_2MhzxfTcW3yGV?d2c=true" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full bg-primary hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2"
-          >
-            🔥 Get Lifetime Access Now
-          </a>
-        ) : (
-          <a 
-            href="https://whop.com/checkout/plan_qsdkzacMGuji2?d2c=true" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full bg-emerald-600 hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2"
-          >
-            🔥 Lock In Your $89/Year Price Now
-          </a>
-        )}
+        <Link 
+          to={isLifetime ? "/order/lifetime" : "/order/annual"}
+          className={`w-full ${
+            isLifetime ? "bg-primary" : "bg-emerald-600"
+          } hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2`}
+        >
+          🔥 {isLifetime ? "Get Lifetime Access Now" : "Lock In Your $89/Year Price Now"}
+        </Link>
       </div>
 
       <div className="space-y-4">
