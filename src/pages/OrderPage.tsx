@@ -165,6 +165,22 @@ const OrderPage = () => {
                 <Shield className="w-4 h-4" />
                 <span>30-Day Money Back Guarantee • Secure Payment • Instant Access</span>
               </div>
+
+              <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  What Happens After Purchase?
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  {isLifetime ? (
+                    "Upon completing your lifetime purchase, our team will verify your transaction and send detailed access instructions to your registered email address within 24 hours."
+                  ) : (
+                    "After confirming your annual subscription, our team will verify your payment and send comprehensive setup instructions to your registered email address within 24 hours."
+                  )}
+                </p>
+                <div className="text-sm text-gray-600">
+                  <strong>Important:</strong> Please check your spam/junk folder if you haven't received our email in your inbox. For any assistance, our support team is ready to help ensure a smooth onboarding process.
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
