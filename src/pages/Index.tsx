@@ -55,7 +55,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <PricingCard 
               firstYearPrice="69"
-              subsequentPrice="199"
+              subsequentPrice="119"
               features={features}
               isPromotional={true}
             />
