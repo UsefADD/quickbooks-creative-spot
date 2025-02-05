@@ -37,6 +37,8 @@ const Index = () => {
       <div className="container mx-auto px-4 py-16">
         <HeroSection />
         
+        <Features />
+        
         {/* Reviews Section */}
         <Reviews />
         
@@ -71,8 +73,6 @@ const Index = () => {
             />
           </div>
         </div>
-
-        <Features />
 
         {/* Delivery Policy Section */}
         <motion.div

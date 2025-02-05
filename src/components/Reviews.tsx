@@ -21,13 +21,37 @@ const Reviews = () => {
       rating: 4,
       text: "I use QuickBooks on a daily basis for invoicing clients, bank reconciliation as well as looking at the various reports. I have customised the reports to show the time period and categories that are useful for our business.",
       author: "Claire R.",
-      role: "Directory",
+      role: "Director",
     },
     {
       rating: 5,
       text: "The automation features have saved us countless hours. The reporting capabilities give us deep insights into our financial health.",
       author: "Michael S.",
       role: "CFO",
+    },
+    {
+      rating: 5,
+      text: "QuickBooks has transformed how we handle our accounting. The cloud-based system means our team can access financial data from anywhere, making remote work seamless.",
+      author: "Sarah K.",
+      role: "Operations Manager",
+    },
+    {
+      rating: 4,
+      text: "The integration capabilities with other business tools we use daily has streamlined our entire operation. Customer support is always helpful when needed.",
+      author: "David M.",
+      role: "Small Business Owner",
+    },
+    {
+      rating: 5,
+      text: "As a growing business, QuickBooks scales perfectly with our needs. The automated features save us time and reduce errors in our bookkeeping.",
+      author: "Jennifer P.",
+      role: "Founder",
+    },
+    {
+      rating: 5,
+      text: "The reporting features are comprehensive and give us clear insights into our business performance. It's been crucial for our decision-making.",
+      author: "Robert L.",
+      role: "Financial Analyst",
     }
   ];
 
