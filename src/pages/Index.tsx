@@ -37,11 +37,6 @@ const Index = () => {
       <div className="container mx-auto px-4 py-16">
         <HeroSection />
         
-        <Features />
-        
-        {/* Reviews Section */}
-        <Reviews />
-        
         {/* Pricing Section */}
         <div className="max-w-6xl mx-auto mb-16">
           <motion.div
@@ -73,7 +68,12 @@ const Index = () => {
             />
           </div>
         </div>
-
+        
+        <Features />
+        
+        {/* Reviews Section */}
+        <Reviews />
+        
         {/* Delivery Policy Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
