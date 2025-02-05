@@ -95,9 +95,6 @@ const OrderPage = () => {
                 <div className="text-center text-2xl font-bold text-red-700">
                   {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
                 </div>
-                <div className="text-center text-red-600 mt-2">
-                  Lock in this special price forever when you join before the timer ends!
-                </div>
               </div>
             )}
 
@@ -139,6 +136,9 @@ const OrderPage = () => {
                       </p>
                       <p>
                         Act fast - this offer is only available for a limited time. Join now to secure your permanent discount and start saving $140 every year!
+                      </p>
+                      <p className="text-emerald-600 font-medium">
+                        Not satisfied? You can cancel your subscription at any time - no questions asked. Your satisfaction is our priority.
                       </p>
                     </div>
                   )}
