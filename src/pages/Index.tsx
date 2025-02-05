@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight, Check, Star, Rocket, BarChart3, Shield, Clock, Award } from "lucide-react";
 import PricingCard from "../components/PricingCard";
 
 const Index = () => {
   const features = [
-    "Track income & expenses",
-    "Send unlimited custom invoices & quotes",
-    "Connect your bank",
-    "Track GST and VAT",
-    "Insights & reports",
-    "Progress invoicing",
-    "Manage bills & payments",
-    "Track employee time",
-    "Multi-currency",
-    "Recurring transactions and bills",
-    "Track inventory",
-    "Track project profitability",
-    "Manage budgets",
-    "For five users, plus your accountant"
+    "Manage Your Business with Ease",
+    "Advanced Reporting & Insights",
+    "5X Faster Performance",
+    "Priority Customer Support",
+    "Seamless Integrations",
+    "Automated Invoicing",
+    "Expense Tracking",
+    "Real-time Financial Insights",
+    "Customizable Reports",
+    "Premium Customer Service",
+    "CRM Integration",
+    "Payroll Software Integration",
+    "Cloud Backup",
+    "Multi-user Access"
   ];
 
   return (
@@ -31,10 +31,10 @@ const Index = () => {
         >
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-[#014d40] mb-6">
-              QuickBooks Desktop Premier Plus 2024
+              🚀 Limited-Time Offer: Get QuickBooks Advanced for Only $69
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              The most powerful QuickBooks Desktop solution for your growing business
+              Powerful accounting, seamless automation, and advanced reporting—at an unbeatable price!
             </p>
           </div>
 
@@ -44,29 +44,23 @@ const Index = () => {
               <Star className="text-yellow-400 w-5 h-5 fill-current" />
               <Star className="text-yellow-400 w-5 h-5 fill-current" />
               <Star className="text-yellow-400 w-5 h-5 fill-current" />
-              <Star className="text-yellow-400 w-5 h-5 fill-current opacity-50" />
-              <span className="text-gray-700 ml-2">6,240+ reviews on Capterra</span>
+              <Star className="text-yellow-400 w-5 h-5 fill-current" />
+              <span className="text-gray-700 ml-2">Trusted by 500+ businesses</span>
             </div>
           </div>
 
           <div className="flex justify-center gap-8 flex-wrap mb-8">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                <Check className="w-4 h-4 text-emerald-600" />
-              </div>
-              <span className="text-gray-700">Cancel anytime</span>
+              <Shield className="w-5 h-5 text-emerald-600" />
+              <span className="text-gray-700">Authorized Reseller</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                <Check className="w-4 h-4 text-emerald-600" />
-              </div>
-              <span className="text-gray-700">Unlimited support</span>
+              <Award className="w-5 h-5 text-emerald-600" />
+              <span className="text-gray-700">100% Secure Purchase</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                <Check className="w-4 h-4 text-emerald-600" />
-              </div>
-              <span className="text-gray-700">Free guided setup</span>
+              <Clock className="w-5 h-5 text-emerald-600" />
+              <span className="text-gray-700">Instant Activation</span>
             </div>
           </div>
         </motion.div>
@@ -79,16 +73,16 @@ const Index = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16"
         >
           <div className="text-center p-6 bg-white rounded-xl shadow-md">
-            <h3 className="text-3xl font-bold text-primary mb-2">7M+</h3>
-            <p className="text-gray-600">Active users worldwide</p>
-          </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-md">
-            <h3 className="text-3xl font-bold text-primary mb-2">98%</h3>
-            <p className="text-gray-600">Customer satisfaction</p>
+            <h3 className="text-3xl font-bold text-primary mb-2">500+</h3>
+            <p className="text-gray-600">Active businesses</p>
           </div>
           <div className="text-center p-6 bg-white rounded-xl shadow-md">
             <h3 className="text-3xl font-bold text-primary mb-2">24/7</h3>
-            <p className="text-gray-600">Expert support</p>
+            <p className="text-gray-600">Premium support</p>
+          </div>
+          <div className="text-center p-6 bg-white rounded-xl shadow-md">
+            <h3 className="text-3xl font-bold text-primary mb-2">5X</h3>
+            <p className="text-gray-600">Faster performance</p>
           </div>
         </motion.div>
 
@@ -101,15 +95,15 @@ const Index = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Special Offer - 50% Off
+              Special Offer - Save $130
             </h2>
             <p className="text-xl text-gray-600">
               Get our most powerful accounting solution at an unbeatable price
             </p>
           </motion.div>
           <PricingCard 
-            firstYearPrice="89.99"
-            subsequentPrice="119.99"
+            firstYearPrice="69"
+            subsequentPrice="199"
             features={features}
             isPromotional={true}
           />
@@ -193,11 +187,11 @@ const Index = () => {
             Ready to get started?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join thousands of businesses that trust QuickBooks Desktop Premier Plus
+            Join 500+ businesses that trust QuickBooks Advanced
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
-              Buy now <ArrowRight className="w-5 h-5" />
+              🔥 Claim Your Discount Now <ArrowRight className="w-5 h-5" />
             </button>
             <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
               Contact sales

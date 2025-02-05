@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, DollarSign, Calendar, Tag } from "lucide-react";
+import { Check, DollarSign, Calendar, Tag, Timer } from "lucide-react";
 
 interface PricingCardProps {
   isPromotional?: boolean;
@@ -18,12 +18,12 @@ const PricingCard = ({ isPromotional, firstYearPrice, subsequentPrice, features 
     >
       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
         <div className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-          50% OFF FIRST YEAR
+          SAVE $130 TODAY
         </div>
       </div>
 
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Plus</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">QuickBooks Advanced</h2>
         <div className="space-y-6">
           {/* First Year Price */}
           <div>
@@ -41,24 +41,27 @@ const PricingCard = ({ isPromotional, firstYearPrice, subsequentPrice, features 
       </div>
       
       <div className="space-y-4 mb-8">
-        <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-lg text-lg font-semibold transition-colors">
-          Buy now
+        <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
+          🔥 Claim Your Discount Now
         </button>
       </div>
 
       <div className="space-y-4">
         {features.map((feature, index) => (
           <div key={index} className="flex items-start space-x-3">
-            <Check className="h-5 w-5 text-slate-600 mt-0.5 flex-shrink-0" />
+            <Check className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
             <span className="text-slate-700">{feature}</span>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 pt-6 border-t border-gray-100">
+      <div className="mt-8 pt-6 border-t border-gray-100 space-y-4">
         <div className="flex items-center gap-2 justify-center text-emerald-600">
-          <Tag className="w-5 h-5" />
-          <span className="font-medium">Save 50% today</span>
+          <Timer className="w-5 h-5" />
+          <span className="font-medium">Limited time offer - Save $130 today!</span>
+        </div>
+        <div className="text-center text-sm text-gray-600">
+          100% Risk-Free | 30-Day Money Back Guarantee
         </div>
       </div>
     </motion.div>
