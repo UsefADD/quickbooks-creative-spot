@@ -21,7 +21,7 @@ const HeroSection = () => {
           QuickBooks Advanced at Unbeatable Prices
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          🚀 Don't miss out on our exclusive deals! Choose between our incredible first-year offer at just $69 (that's a massive 65% savings!) or unlock lifetime access for a one-time payment of $299 (Regular price: $999). Imagine never paying for QuickBooks again - that's thousands in savings over the years! Act fast, these unprecedented offers won't last long!
+          🚀 Don't miss out on our exclusive deals! Choose between our annual plan at just $89/year (Regular price: $229/year) - lock in this special price forever, or get lifetime access for a one-time payment of $299 (Regular price: $999). Never worry about price increases or recurring charges again! These unprecedented offers won't last long, secure your savings now!
         </p>
       </div>
 
