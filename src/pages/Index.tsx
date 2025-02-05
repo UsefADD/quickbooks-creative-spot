@@ -139,7 +139,7 @@ const Index = () => {
             Ready to get started?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join 500+ businesses that trust QuickBooks Advanced
+            Join 5,687+ businesses that trust QuickBooks Advanced
           </p>
           <button 
             onClick={scrollToPricing}
