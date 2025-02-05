@@ -4,6 +4,7 @@ import PricingCard from "../components/PricingCard";
 import HeroSection from "../components/HeroSection";
 import TrustBadges from "../components/TrustBadges";
 import Features from "../components/Features";
+import Reviews from "../components/Reviews";
 
 const Index = () => {
   const features = [
@@ -35,6 +36,9 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-16">
         <HeroSection />
+        
+        {/* Reviews Section */}
+        <Reviews />
         
         {/* Pricing Section */}
         <div className="max-w-6xl mx-auto mb-16">
