@@ -23,6 +23,14 @@ const Index = () => {
     "Multi-user Access"
   ];
 
+  const lifetimeFeatures = [
+    ...features,
+    "Lifetime Updates",
+    "No Annual Fees",
+    "Premium Support Forever",
+    "All Future Features Included"
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-16">
@@ -30,7 +38,7 @@ const Index = () => {
         <TrustBadges />
 
         {/* Pricing Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-6xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,18 +46,26 @@ const Index = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Special Offer - Save $130
+              Choose Your Perfect Plan
             </h2>
             <p className="text-xl text-gray-600">
-              Get our most powerful accounting solution at an unbeatable price
+              Select the plan that best fits your business needs
             </p>
           </motion.div>
-          <PricingCard 
-            firstYearPrice="69"
-            subsequentPrice="199"
-            features={features}
-            isPromotional={true}
-          />
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <PricingCard 
+              firstYearPrice="69"
+              subsequentPrice="199"
+              features={features}
+              isPromotional={true}
+            />
+            <PricingCard 
+              isLifetime={true}
+              firstYearPrice="299"
+              features={lifetimeFeatures}
+            />
+          </div>
         </div>
 
         <Features />
@@ -119,8 +135,8 @@ const Index = () => {
           <p className="text-xl text-gray-600 mb-8">
             Join 500+ businesses that trust QuickBooks Advanced
           </p>
-          <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
-            🔥 Claim Your Discount Now <ArrowRight className="w-5 h-5" />
+          <button className="bg-primary hover:opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
+            🔥 Choose Your Plan Now <ArrowRight className="w-5 h-5" />
           </button>
         </motion.div>
       </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, Shield, Award, Clock } from "lucide-react";
+import { Star, Shield, Award, Clock, Infinity } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -9,11 +9,19 @@ const HeroSection = () => {
       className="text-center mb-12"
     >
       <div className="max-w-4xl mx-auto">
+        <div className="flex justify-center gap-4 mb-4">
+          <span className="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium">
+            Special Offer
+          </span>
+          <span className="bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-sm font-medium">
+            New: Lifetime Plan Available
+          </span>
+        </div>
         <h1 className="text-4xl md:text-6xl font-bold text-[#014d40] mb-6 leading-tight">
-          🚀 Limited-Time Offer: Get QuickBooks Advanced for Only $69
+          QuickBooks Advanced at Unbeatable Prices
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Powerful accounting, seamless automation, and advanced reporting—at an unbeatable price!
+          Choose between our exclusive first-year offer at $69 or get lifetime access for a one-time payment of $299!
         </p>
       </div>
 
@@ -38,6 +46,10 @@ const HeroSection = () => {
         <div className="flex items-center gap-2">
           <Clock className="w-5 h-5 text-emerald-600" />
           <span className="text-gray-700">Instant Activation</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Infinity className="w-5 h-5 text-primary" />
+          <span className="text-gray-700">Lifetime Access Available</span>
         </div>
       </div>
     </motion.div>
