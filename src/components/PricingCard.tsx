@@ -21,7 +21,7 @@ const PricingCard = ({
   features 
 }: PricingCardProps) => {
   const [timeLeft, setTimeLeft] = useState({
-    hours: 47,
+    hours: 7,
     minutes: 59,
     seconds: 59
   });
