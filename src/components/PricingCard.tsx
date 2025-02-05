@@ -95,17 +95,19 @@ const PricingCard = ({
         </div>
       </div>
 
-      <div className="bg-red-50 rounded-lg p-4 mb-6">
-        <div className="text-center text-red-600 font-semibold">
-          ⚡ Special Offer Ends In:
+      {!isLifetime && (
+        <div className="bg-red-50 rounded-lg p-4 mb-6">
+          <div className="text-center text-red-600 font-semibold">
+            ⚡ Special Offer Ends In:
+          </div>
+          <div className="text-center text-2xl font-bold text-red-700">
+            {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
+          </div>
+          <div className="text-center text-sm text-red-600 mt-2">
+            Lock in $89/year pricing forever when you join before the timer ends!
+          </div>
         </div>
-        <div className="text-center text-2xl font-bold text-red-700">
-          {String(timeLeft.hours).padStart(2, '0')}:{String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
-        </div>
-        <div className="text-center text-sm text-red-600 mt-2">
-          Lock in $89/year pricing forever when you join before the timer ends!
-        </div>
-      </div>
+      )}
       
       <div className="space-y-4 mb-8">
         {isLifetime ? (
