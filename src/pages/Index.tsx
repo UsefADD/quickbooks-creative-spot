@@ -32,13 +32,18 @@ const Index = () => {
     "All Future Features Included"
   ];
 
+  const scrollToPricing = () => {
+    const pricingSection = document.querySelector('#pricing-section');
+    pricingSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-16">
         <HeroSection />
         
         {/* Pricing Section */}
-        <div className="max-w-6xl mx-auto mb-16">
+        <div id="pricing-section" className="max-w-6xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,11 +75,8 @@ const Index = () => {
         </div>
         
         <Features />
-        
-        {/* Reviews Section */}
         <Reviews />
         
-        {/* Delivery Policy Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -139,7 +141,10 @@ const Index = () => {
           <p className="text-xl text-gray-600 mb-8">
             Join 500+ businesses that trust QuickBooks Advanced
           </p>
-          <button className="bg-primary hover:opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2">
+          <button 
+            onClick={scrollToPricing}
+            className="bg-primary hover:opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2"
+          >
             🔥 Choose Your Plan Now <ArrowRight className="w-5 h-5" />
           </button>
         </motion.div>
