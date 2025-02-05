@@ -77,6 +77,8 @@ const PricingCard = ({
                 <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
                 <div className="text-gray-600">One-time payment</div>
               </div>
+              {/* Add empty div for spacing to match annual plan layout */}
+              <div className="h-[72px]"></div>
             </>
           ) : (
             <>
