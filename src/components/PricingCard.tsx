@@ -71,11 +71,16 @@ const PricingCard = ({
         </h2>
         <div className="space-y-6">
           {isLifetime ? (
-            <div>
-              <div className="text-gray-500 line-through text-xl">US${originalPrice}</div>
-              <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
-              <div className="text-gray-600">One-time payment</div>
-            </div>
+            <>
+              <div>
+                <div className="text-gray-500 line-through text-xl">US${originalPrice}</div>
+                <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
+                <div className="text-gray-600">One-time payment</div>
+              </div>
+              <button className="w-full bg-primary hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2 mb-4">
+                🔥 Get Lifetime Access Now
+              </button>
+            </>
           ) : (
             <>
               <div>
@@ -117,14 +122,6 @@ const PricingCard = ({
           </div>
         ))}
       </div>
-
-      {isLifetime && (
-        <div className="mt-8">
-          <button className="w-full bg-primary hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
-            🔥 Get Lifetime Access Now
-          </button>
-        </div>
-      )}
 
       <div className="mt-8 pt-6 border-t border-gray-100 space-y-4">
         <div className={`flex items-center gap-2 justify-center ${isLifetime ? 'text-primary' : 'text-emerald-600'}`}>

@@ -13,7 +13,7 @@ const TrustBadges = () => {
         <div className="mb-4 flex justify-center">
           <Shield className="w-12 h-12 text-primary" />
         </div>
-        <h3 className="text-3xl font-bold text-primary mb-2">500+</h3>
+        <h3 className="text-3xl font-bold text-primary mb-2">5,687+</h3>
         <p className="text-gray-600">Active businesses</p>
       </div>
       <div className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">

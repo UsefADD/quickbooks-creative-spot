@@ -21,7 +21,7 @@ const HeroSection = () => {
           QuickBooks Advanced at Unbeatable Prices
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Choose between our exclusive first-year offer at $69 or get lifetime access for a one-time payment of $299 (Regular price: $999)!
+          🚀 Don't miss out on our exclusive deals! Choose between our incredible first-year offer at just $69 (that's a massive 65% savings!) or unlock lifetime access for a one-time payment of $299 (Regular price: $999). Imagine never paying for QuickBooks again - that's thousands in savings over the years! Act fast, these unprecedented offers won't last long!
         </p>
       </div>
 
@@ -30,7 +30,7 @@ const HeroSection = () => {
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="text-yellow-400 w-5 h-5 fill-current" />
           ))}
-          <span className="text-gray-700 ml-2">Trusted by 500+ businesses</span>
+          <span className="text-gray-700 ml-2">Trusted by 5,687+ businesses</span>
         </div>
       </div>
 
