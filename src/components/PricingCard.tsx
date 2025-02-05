@@ -77,9 +77,6 @@ const PricingCard = ({
                 <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
                 <div className="text-gray-600">One-time payment</div>
               </div>
-              <button className="w-full bg-primary hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2 mb-4">
-                🔥 Get Lifetime Access Now
-              </button>
             </>
           ) : (
             <>
@@ -107,7 +104,11 @@ const PricingCard = ({
       </div>
       
       <div className="space-y-4 mb-8">
-        {!isLifetime && (
+        {isLifetime ? (
+          <button className="w-full bg-primary hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
+            🔥 Get Lifetime Access Now
+          </button>
+        ) : (
           <button className="w-full bg-emerald-600 hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2">
             🔥 Claim Your Discount Now
           </button>
