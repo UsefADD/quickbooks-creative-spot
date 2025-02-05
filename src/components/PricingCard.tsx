@@ -52,7 +52,7 @@ const PricingCard = ({
       {isPromotional && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
           <div className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-            SAVE $130 TODAY
+            SAVE $100 TODAY
           </div>
         </div>
       )}
@@ -77,19 +77,18 @@ const PricingCard = ({
                 <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
                 <div className="text-gray-600">One-time payment</div>
               </div>
-              {/* Add empty div for spacing to match annual plan layout */}
               <div className="h-[72px]"></div>
             </>
           ) : (
             <>
               <div>
-                <div className="text-gray-500 line-through">US${subsequentPrice}</div>
+                <div className="text-gray-500 line-through">US$169</div>
                 <div className="text-4xl font-bold text-gray-900">US${firstYearPrice}</div>
                 <div className="text-gray-600">First year</div>
               </div>
               <div className="pt-4 border-t border-gray-100">
                 <div className="text-2xl font-semibold text-gray-700">US${subsequentPrice}</div>
-                <div className="text-gray-600">After first year</div>
+                <div className="text-gray-600">After first year (Save $50 on renewal)</div>
               </div>
             </>
           )}
@@ -134,7 +133,7 @@ const PricingCard = ({
             <Timer className="w-5 h-5" />
           )}
           <span className="font-medium">
-            {isLifetime ? "One-time payment, lifetime access!" : "Limited time offer - Save $130 today!"}
+            {isLifetime ? "One-time payment, lifetime access!" : "Limited time offer - Save $100 today & $50 on renewal!"}
           </span>
         </div>
         <div className="text-center text-sm text-gray-600">
