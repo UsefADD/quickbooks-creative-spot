@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { BarChart3, Rocket, Shield, Users, Zap, Layers, Clock, DollarSign, FileText, BankIcon, Receipt, Calculator, Mail, Palette, Cpu, UserCheck, ScrollText, RefreshCw } from "lucide-react";
+import { BarChart3, Rocket, Shield, Users, Zap, Layers, Clock, DollarSign, FileText, Building2, Receipt, Calculator, Mail, Palette, Cpu, UserCheck, ScrollText, RefreshCw } from "lucide-react";
 import FeatureCard from "./FeatureCard";
 
 const Features = () => {
@@ -16,7 +16,7 @@ const Features = () => {
       description: "Access financial, tax, and sales data with one click for comprehensive business health analysis."
     },
     {
-      icon: BankIcon,
+      icon: Building2,
       title: "Online Banking Integration",
       description: "Download online bank transactions directly into QuickBooks to eliminate manual data entry."
     },
