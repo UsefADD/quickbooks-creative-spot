@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Clock, DollarSign, Infinity, Shield } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -30,6 +31,14 @@ const OrderPage = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const handleCheckout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const checkoutUrl = isLifetime 
+      ? "https://whop.com/checkout/plan_2MhzxfTcW3yGV?d2c=true"
+      : "https://whop.com/checkout/plan_qsdkzacMGuji2?d2c=true";
+    window.location.href = checkoutUrl;
+  };
 
   const benefits = isLifetime ? [
     "One-time payment, lifetime access to all features",
@@ -147,19 +156,15 @@ const OrderPage = () => {
             </div>
 
             <div className="border-t border-gray-100 pt-8">
-              <a
-                href={isLifetime 
-                  ? "https://whop.com/checkout/plan_2MhzxfTcW3yGV?d2c=true"
-                  : "https://whop.com/checkout/plan_qsdkzacMGuji2?d2c=true"}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleCheckout}
                 className={`w-full ${
                   isLifetime ? "bg-primary" : "bg-emerald-600"
                 } hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2`}
               >
                 🔥 {isLifetime ? "Get Lifetime Access Now" : "Lock In Your $89/Year Price Now"}
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
 
               <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-600">
                 <Shield className="w-4 h-4" />
@@ -190,3 +195,4 @@ const OrderPage = () => {
 };
 
 export default OrderPage;
+
