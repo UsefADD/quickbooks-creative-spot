@@ -44,14 +44,6 @@ const PricingCard = ({
     return () => clearInterval(timer);
   }, []);
 
-  const handleCheckout = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const checkoutUrl = isLifetime 
-      ? "https://whop.com/checkout/plan_2MhzxfTcW3yGV?d2c=true"
-      : "https://whop.com/checkout/plan_qsdkzacMGuji2?d2c=true";
-    window.location.href = checkoutUrl;
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -115,14 +107,14 @@ const PricingCard = ({
       </div>
       
       <div className="space-y-4 mb-8">
-        <button 
-          onClick={handleCheckout}
+        <Link 
+          to={isLifetime ? "/order/lifetime" : "/order/annual"}
           className={`w-full ${
             isLifetime ? "bg-primary" : "bg-emerald-600"
           } hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2`}
         >
           🔥 {isLifetime ? "Get Lifetime Access Now" : "Lock In Your $89/Year Price Now"}
-        </button>
+        </Link>
       </div>
 
       <div className="space-y-4">
@@ -154,4 +146,3 @@ const PricingCard = ({
 };
 
 export default PricingCard;
-

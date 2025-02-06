@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Clock, DollarSign, Infinity, Shield } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -32,8 +31,7 @@ const OrderPage = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleCheckout = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleWhopCheckout = () => {
     const checkoutUrl = isLifetime 
       ? "https://whop.com/checkout/plan_2MhzxfTcW3yGV?d2c=true"
       : "https://whop.com/checkout/plan_qsdkzacMGuji2?d2c=true";
@@ -157,7 +155,7 @@ const OrderPage = () => {
 
             <div className="border-t border-gray-100 pt-8">
               <button
-                onClick={handleCheckout}
+                onClick={handleWhopCheckout}
                 className={`w-full ${
                   isLifetime ? "bg-primary" : "bg-emerald-600"
                 } hover:opacity-90 text-white py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2`}
@@ -195,4 +193,3 @@ const OrderPage = () => {
 };
 
 export default OrderPage;
-
