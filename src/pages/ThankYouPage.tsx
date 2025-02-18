@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Download, Gift, Copy, CheckCircle } from "lucide-react";
+import { Download, Gift, Copy, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
@@ -51,6 +51,7 @@ const ThankYouPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-8"
         >
           <Card className="p-6 mb-8 shadow-lg">
             <h2 className="text-2xl font-semibold mb-4 text-gray-900">
@@ -112,6 +113,35 @@ const ThankYouPage = () => {
                   >
                     {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                   </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6 shadow-lg border-l-4 border-blue-500">
+            <div className="flex items-start gap-4">
+              <AlertCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Important Installation Information
+                </h3>
+                <div className="space-y-3 text-gray-600">
+                  <p>
+                    During installation, you will initially be asked for only the <strong>License Number</strong> and <strong>Product Number</strong>.
+                  </p>
+                  <p>
+                    If you encounter an activation screen showing "Contact support to complete activation," don't worry - this is a normal part of the process for some installations.
+                  </p>
+                  <p>
+                    Simply click on "Issues with activation" when prompted. This will reveal an additional input field where you can enter the <strong>Validation Code</strong> provided above. After entering the code, your software will activate properly.
+                  </p>
+                  <div className="mt-4">
+                    <img 
+                      src="public/lovable-uploads/41572ddc-b384-4b25-9a86-fecb280ab40d.png" 
+                      alt="QuickBooks activation screen example" 
+                      className="rounded-lg border border-gray-200 shadow-sm"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
