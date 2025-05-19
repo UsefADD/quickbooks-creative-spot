@@ -20,8 +20,8 @@ const ThankYouPage = () => {
     navigator.clipboard.writeText(text);
     setCopied(true);
     toast({
-      title: "Copied!",
-      description: `${field} has been copied to your clipboard.`,
+      title: "Kopiert!",
+      description: `${field} wurde in die Zwischenablage kopiert.`,
       duration: 2000,
     });
     setTimeout(() => setCopied(false), 2000);
@@ -40,10 +40,10 @@ const ThankYouPage = () => {
             <Gift className="w-16 h-16 text-primary animate-float" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Thank You for Your Purchase!
+            Vielen Dank für Ihren Kauf!
           </h1>
           <p className="text-xl text-gray-600">
-            Your QuickBooks Enterprise order has been confirmed. Below you'll find your download link and license information.
+            Ihre QuickBooks Enterprise Bestellung wurde bestätigt. Nachfolgend finden Sie Ihren Download-Link und Ihre Lizenzinformationen.
           </p>
         </motion.div>
 
@@ -55,33 +55,33 @@ const ThankYouPage = () => {
         >
           <Card className="p-6 mb-8 shadow-lg">
             <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              Download Your Software
+              Laden Sie Ihre Software herunter
             </h2>
             <p className="text-gray-600 mb-4">
-              Click the button below to start downloading QuickBooks Enterprise 2024:
+              Klicken Sie auf die Schaltfläche unten, um mit dem Herunterladen von QuickBooks Enterprise 2024 zu beginnen:
             </p>
             <Button
               className="w-full sm:w-auto flex items-center justify-center gap-2"
               onClick={() => window.open(downloadLink, '_blank')}
             >
               <Download className="w-4 h-4" />
-              Download QuickBooks Enterprise
+              QuickBooks Enterprise herunterladen
             </Button>
           </Card>
 
           <Card className="p-6 shadow-lg">
             <h2 className="text-2xl font-semibold mb-4 text-gray-900">
-              Your License Information
+              Ihre Lizenzinformationen
             </h2>
             <div className="space-y-4">
               <div className="flex flex-col space-y-2">
-                <label className="text-sm font-medium text-gray-600">License Number</label>
+                <label className="text-sm font-medium text-gray-600">Lizenznummer</label>
                 <div className="flex items-center justify-between p-3 bg-muted rounded-md">
                   <code className="text-sm font-mono">{licenseInfo.licenseNumber}</code>
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => copyToClipboard(licenseInfo.licenseNumber, "License number")}
+                    onClick={() => copyToClipboard(licenseInfo.licenseNumber, "Lizenznummer")}
                   >
                     {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                   </Button>
@@ -89,13 +89,13 @@ const ThankYouPage = () => {
               </div>
 
               <div className="flex flex-col space-y-2">
-                <label className="text-sm font-medium text-gray-600">Product Number</label>
+                <label className="text-sm font-medium text-gray-600">Produktnummer</label>
                 <div className="flex items-center justify-between p-3 bg-muted rounded-md">
                   <code className="text-sm font-mono">{licenseInfo.productNumber}</code>
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => copyToClipboard(licenseInfo.productNumber, "Product number")}
+                    onClick={() => copyToClipboard(licenseInfo.productNumber, "Produktnummer")}
                   >
                     {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                   </Button>
@@ -103,13 +103,13 @@ const ThankYouPage = () => {
               </div>
 
               <div className="flex flex-col space-y-2">
-                <label className="text-sm font-medium text-gray-600">Validation Code</label>
+                <label className="text-sm font-medium text-gray-600">Validierungscode</label>
                 <div className="flex items-center justify-between p-3 bg-muted rounded-md">
                   <code className="text-sm font-mono">{licenseInfo.validationCode}</code>
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => copyToClipboard(licenseInfo.validationCode, "Validation code")}
+                    onClick={() => copyToClipboard(licenseInfo.validationCode, "Validierungscode")}
                   >
                     {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                   </Button>
@@ -123,22 +123,22 @@ const ThankYouPage = () => {
               <AlertCircle className="w-6 h-6 text-blue-500 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Important Installation Information
+                  Wichtige Installationsinformationen
                 </h3>
                 <div className="space-y-3 text-gray-600">
                   <p>
-                    During installation, you will initially be asked for only the <strong>License Number</strong> and <strong>Product Number</strong>.
+                    Während der Installation werden Sie zunächst nur nach der <strong>Lizenznummer</strong> und <strong>Produktnummer</strong> gefragt.
                   </p>
                   <p>
-                    If you encounter an activation screen showing "Contact support to complete activation," don't worry - this is a normal part of the process for some installations.
+                    Wenn Sie einen Aktivierungsbildschirm mit der Meldung "Kontaktieren Sie den Support, um die Aktivierung abzuschließen" sehen, keine Sorge - dies ist ein normaler Teil des Prozesses bei einigen Installationen.
                   </p>
                   <p>
-                    Simply click on "Issues with activation" when prompted. This will reveal an additional input field where you can enter the <strong>Validation Code</strong> provided above. After entering the code, your software will activate properly.
+                    Klicken Sie einfach auf "Probleme bei der Aktivierung", wenn Sie dazu aufgefordert werden. Dadurch wird ein zusätzliches Eingabefeld angezeigt, in das Sie den oben angegebenen <strong>Validierungscode</strong> eingeben können. Nach Eingabe des Codes wird Ihre Software ordnungsgemäß aktiviert.
                   </p>
                   <div className="mt-4">
                     <img 
                       src="public/lovable-uploads/41572ddc-b384-4b25-9a86-fecb280ab40d.png" 
-                      alt="QuickBooks activation screen example" 
+                      alt="QuickBooks Aktivierungsbildschirm Beispiel" 
                       className="rounded-lg border border-gray-200 shadow-sm"
                     />
                   </div>
@@ -149,10 +149,10 @@ const ThankYouPage = () => {
 
           <div className="mt-8 text-center text-gray-600">
             <p className="mb-4">
-              Need help with installation? Our support team is here to help you get started.
+              Benötigen Sie Hilfe bei der Installation? Unser Support-Team ist hier, um Ihnen den Einstieg zu erleichtern.
             </p>
             <Button variant="outline" onClick={() => window.location.href = "/"}>
-              Return to Homepage
+              Zurück zur Startseite
             </Button>
           </div>
         </motion.div>

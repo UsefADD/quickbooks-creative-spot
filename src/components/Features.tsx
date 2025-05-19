@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { BarChart3, Rocket, Shield, Users, Zap, Layers } from "lucide-react";
 import FeatureCard from "./FeatureCard";
@@ -6,33 +7,33 @@ const Features = () => {
   const features = [
     {
       icon: Rocket,
-      title: "Manage Your Business with Ease",
-      description: "Automate invoices, track expenses, and streamline your workflow efficiently."
+      title: "Verwalten Sie Ihr Unternehmen mit Leichtigkeit",
+      description: "Automatisieren Sie Rechnungen, verfolgen Sie Ausgaben und optimieren Sie Ihren Workflow effizient."
     },
     {
       icon: BarChart3,
-      title: "Advanced Reporting & Insights",
-      description: "Gain real-time financial insights with customizable reports and analytics."
+      title: "Erweiterte Berichte & Einblicke",
+      description: "Erhalten Sie Finanzeinblicke in Echtzeit mit anpassbaren Berichten und Analysen."
     },
     {
       icon: Zap,
-      title: "5X Faster Performance",
-      description: "Speed up accounting tasks with an optimized and intuitive interface."
+      title: "5-mal schnellere Leistung",
+      description: "Beschleunigen Sie Buchhaltungsaufgaben mit einer optimierten und intuitiven Benutzeroberfläche."
     },
     {
       icon: Shield,
-      title: "Priority Customer Support",
-      description: "Get premium customer service whenever you need assistance."
+      title: "Vorrangiger Kundensupport",
+      description: "Erhalten Sie Premium-Kundendienst, wann immer Sie Unterstützung benötigen."
     },
     {
       icon: Layers,
-      title: "Seamless Integrations",
-      description: "Sync with your favorite business tools, including CRM & payroll software."
+      title: "Nahtlose Integrationen",
+      description: "Synchronisieren Sie mit Ihren bevorzugten Geschäftstools, einschließlich CRM & Gehaltsabrechnungssoftware."
     },
     {
       icon: Users,
-      title: "Multi-User Access",
-      description: "Collaborate with your team efficiently with role-based permissions."
+      title: "Mehrbenutzerzugriff",
+      description: "Arbeiten Sie effizient mit Ihrem Team durch rollenbasierte Berechtigungen zusammen."
     }
   ];
 
@@ -47,10 +48,10 @@ const Features = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Why Choose QuickBooks Advanced?
+            Warum QuickBooks Advanced wählen?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover the powerful features that make QuickBooks Advanced the perfect solution for your business
+            Entdecken Sie die leistungsstarken Funktionen, die QuickBooks Advanced zur perfekten Lösung für Ihr Unternehmen machen
           </p>
         </motion.div>
 

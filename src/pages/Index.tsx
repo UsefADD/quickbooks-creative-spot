@@ -1,35 +1,53 @@
+
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import PricingCard from "../components/PricingCard";
 import HeroSection from "../components/HeroSection";
 import TrustBadges from "../components/TrustBadges";
 import Features from "../components/Features";
 import Reviews from "../components/Reviews";
+import SpinWheel from "../components/SpinWheel";
 
 const Index = () => {
+  const [showSpinWheel, setShowSpinWheel] = useState(false);
+  
+  useEffect(() => {
+    // Check if the wheel has been shown before
+    const wheelShown = localStorage.getItem("wheel_shown");
+    if (!wheelShown) {
+      // Show the wheel after 3 seconds
+      const timer = setTimeout(() => {
+        setShowSpinWheel(true);
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const features = [
-    "Manage Your Business with Ease",
-    "Advanced Reporting & Insights",
-    "5X Faster Performance",
-    "Priority Customer Support",
-    "Seamless Integrations",
-    "Automated Invoicing",
-    "Expense Tracking",
-    "Real-time Financial Insights",
-    "Customizable Reports",
-    "Premium Customer Service",
-    "CRM Integration",
-    "Payroll Software Integration",
-    "Cloud Backup",
-    "Multi-user Access"
+    "Verwalten Sie Ihr Unternehmen mit Leichtigkeit",
+    "Erweiterte Berichterstattung & Einblicke",
+    "5-mal schnellere Leistung",
+    "Vorrangiger Kundensupport",
+    "Nahtlose Integrationen",
+    "Automatisierte Rechnungsstellung",
+    "Spesenerfassung",
+    "Finanzielle Einblicke in Echtzeit",
+    "Anpassbare Berichte",
+    "Premium Kundenservice",
+    "CRM-Integration",
+    "Integration von Gehaltsabrechnungssoftware",
+    "Cloud-Backup",
+    "Mehrbenutzerzugriff"
   ];
 
   const lifetimeFeatures = [
     ...features,
-    "Lifetime Updates",
-    "No Annual Fees",
-    "Premium Support Forever",
-    "All Future Features Included"
+    "Lebenslange Updates",
+    "Keine jährlichen Gebühren",
+    "Premium-Support für immer",
+    "Alle zukünftigen Funktionen inklusive"
   ];
 
   const scrollToPricing = () => {
@@ -51,10 +69,10 @@ const Index = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Choose Your Perfect Plan
+              Wählen Sie Ihren perfekten Plan
             </h2>
             <p className="text-xl text-gray-600">
-              Select the plan that best fits your business needs
+              Wählen Sie den Plan, der am besten zu Ihren Geschäftsanforderungen passt
             </p>
           </motion.div>
           
@@ -64,12 +82,14 @@ const Index = () => {
               subsequentPrice="89"
               features={features}
               isPromotional={true}
+              currency="EUR"
             />
             <PricingCard 
               isLifetime={true}
-              firstYearPrice="299"
+              firstYearPrice="199"
               originalPrice="999"
               features={lifetimeFeatures}
+              currency="EUR"
             />
           </div>
         </div>
@@ -84,27 +104,27 @@ const Index = () => {
           className="max-w-4xl mx-auto mb-16"
         >
           <div className="bg-white rounded-xl shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Refund Policy</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Rückerstattungsrichtlinie</h2>
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">30-Day Money Back Guarantee</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">30-Tage-Geld-zurück-Garantie</h3>
                 <p className="text-gray-600">
-                  Our policy offers a full refund within 30 days of your date of purchase. For immediate refund processing, please contact us at{" "}
+                  Unsere Richtlinie bietet eine vollständige Rückerstattung innerhalb von 30 Tagen ab Kaufdatum. Für eine sofortige Bearbeitung der Rückerstattung kontaktieren Sie uns bitte unter{" "}
                   <a href="mailto:lethithuytien1905@gmail.com" className="text-primary hover:underline font-medium">
                     lethithuytien1905@gmail.com
                   </a>
-                  . We'd love to know what went wrong and how we can improve.
+                  . Wir würden gerne erfahren, was schief gelaufen ist und wie wir uns verbessern können.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Refund Processing</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Rückerstattungsbearbeitung</h3>
                 <p className="text-gray-600">
-                  Once we receive your refund request at{" "}
+                  Sobald wir Ihre Rückerstattungsanfrage unter{" "}
                   <a href="mailto:lethithuytien1905@gmail.com" className="text-primary hover:underline font-medium">
                     lethithuytien1905@gmail.com
                   </a>
-                  , our team will process it immediately. While we handle refunds as quickly as possible, your financial institution may take up to 20 days for the refund to reflect in your account.
+                  {" "}erhalten, wird unser Team diese unverzüglich bearbeiten. Während wir Rückerstattungen so schnell wie möglich bearbeiten, kann es bis zu 20 Tage dauern, bis die Rückerstattung auf Ihrem Konto erscheint.
                 </p>
               </div>
             </div>
@@ -119,19 +139,21 @@ const Index = () => {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to get started?
+            Bereit loszulegen?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Join 5,687+ businesses that trust QuickBooks Advanced
+            Schließen Sie sich 5.687+ Unternehmen an, die QuickBooks Advanced vertrauen
           </p>
           <button 
             onClick={scrollToPricing}
             className="bg-primary hover:opacity-90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2"
           >
-            🔥 Choose Your Plan Now <ArrowRight className="w-5 h-5" />
+            🔥 Wählen Sie jetzt Ihren Plan <ArrowRight className="w-5 h-5" />
           </button>
         </motion.div>
       </div>
+      
+      {showSpinWheel && <SpinWheel onClose={() => setShowSpinWheel(false)} />}
     </div>
   );
 };
